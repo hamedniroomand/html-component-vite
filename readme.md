@@ -1,6 +1,6 @@
-# HTML Component Vite
+# LiteStack
 
-A simple, lightweight boilerplate for building static HTML sites without the complexity of SPAs or heavy JavaScript frameworks. Built with Vite, Handlebars, Alpine.js, and TailwindCSS, this starter generates clean HTML, CSS, and JavaScript files that can easily integrate with any backend system.
+A lightweight, modern toolchain for building static websites without the complexity of SPAs or heavy JavaScript frameworks. LiteStack combines the best minimal tools - Vite, Handlebars, Alpine.js, and TailwindCSS - to generate clean HTML, CSS, and JavaScript that can easily integrate with any backend system.
 
 ## Features
 
@@ -23,8 +23,8 @@ A simple, lightweight boilerplate for building static HTML sites without the com
 
 1. Clone this repository
 ```bash
-git clone https://github.com/hamedniroomand/html-component-vite
-cd html-component-vite
+git clone https://github.com/hamedniroomand/light-stack
+cd light-stack
 ```
 
 2. Install dependencies
