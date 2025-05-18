@@ -10,5 +10,10 @@ export default {
         handlebars({
             root: './src',
         })
-    ]
+    ],
+    server: {
+        port: 5174,
+        host: true,
+        open: true,
+    }
 };

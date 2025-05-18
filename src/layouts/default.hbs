@@ -14,7 +14,7 @@
     <nav class="flex justify-center items-center w-full h-16 bg-slate-200 text-slate-900">
         <ul class="flex gap-4">
             {{#each navigation as |item| }}
-            <li><a href="/{{item}}">{{item}}</a></li>
+            <li><a href="{{../base_url}}{{item.url}}">{{item.name}}</a></li>
             {{/each}}
         </ul>
     </nav>

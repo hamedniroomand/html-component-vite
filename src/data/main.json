@@ -1,3 +1,17 @@
 {
-    "navigation": ["index", "about", "contact"]
+    "base_url": "/lite-stack",
+    "navigation": [
+        {
+            "name": "Home",
+            "url": "/"
+        },
+        {
+            "name": "About",
+            "url": "/about"
+        },
+        {
+            "name": "Contact",
+            "url": "/contact"
+        }
+    ]
 }
