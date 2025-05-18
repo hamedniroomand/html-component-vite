@@ -1,14 +1,15 @@
 # LiteStack
 
-A lightweight, modern toolchain for building static websites without the complexity of SPAs or heavy JavaScript frameworks. LiteStack combines the best minimal tools - Vite, Handlebars, Alpine.js, and TailwindCSS - to generate clean HTML, CSS, and JavaScript that can easily integrate with any backend system.
+A lightweight, modern toolchain for building static websites without the complexity of SPAs or heavy JavaScript frameworks. LiteStack combines the best minimal tools - Vite, Handlebars, Alpine.js, and TailwindCSS v4 - to generate clean HTML, CSS, and JavaScript that can easily integrate with any backend system.
 
 ## Features
 
 - 📦 **Minimal Dependencies** - No huge frameworks, just what you need
 - 🚀 **Fast Development** - Powered by Vite for lightning-fast builds
 - 🧩 **Component-Based** - Handlebars for templating and component composition
-- 🎨 **TailwindCSS** - Utility-first CSS framework for rapid styling
+- 🎨 **TailwindCSS v4** - Latest version with simplified configuration in CSS
 - ⚡ **Alpine.js** - Lightweight JavaScript for interactive functionality
+- 🌙 **Dark Mode** - Built-in dark mode with system preference detection
 - 📱 **Responsive** - Mobile-friendly layouts out of the box
 - 🔍 **TypeScript Support** - Type checking for better code quality
 
@@ -17,14 +18,14 @@ A lightweight, modern toolchain for building static websites without the complex
 ### Prerequisites
 
 - Node.js (>= 18.0.0)
-- pnpm, npm, or yarn
+- pnpm (recommended) or npm
 
 ### Installation
 
 1. Clone this repository
 ```bash
-git clone https://github.com/hamedniroomand/light-stack
-cd light-stack
+git clone https://github.com/hamedniroomand/lite-stack
+cd lite-stack
 ```
 
 2. Install dependencies
@@ -37,7 +38,7 @@ pnpm install
 pnpm dev
 ```
 
-4. Visit `http://localhost:5173` in your browser
+4. Visit `http://localhost:5174` in your browser
 
 ### Build for Production
 
@@ -54,24 +55,24 @@ The build output will be in the `dist` directory - ready to be deployed to any s
 │   └── statics/            # Images, fonts, etc.
 ├── src/
 │   ├── assets/             # CSS and TypeScript files
-│   │   ├── css/            # CSS files (TailwindCSS)
-│   │   └── ts/             # TypeScript files (Alpine.js)
+│   │   ├── css/            # CSS files with TailwindCSS v4 configuration
+│   │   └── ts/             # TypeScript files for Alpine.js
 │   ├── components/         # Reusable Handlebars components
 │   ├── data/               # JSON data files for templates
 │   ├── layouts/            # Layout templates
 │   └── pages/              # Page templates
 ├── .gitignore              # Git ignore file
-├── eslint.config.js        # ESLint configuration
+├── eslint.config.js        # ESLint configuration (flat config)
 ├── package.json            # Project dependencies and scripts
 ├── tsconfig.json           # TypeScript configuration
-└── vite.config.js          # Vite configuration
+└── vite.config.js          # Vite configuration with plugins
 ```
 
 ## How It Works
 
 ### Templates and Components
 
-This starter uses Handlebars for templating. Layouts are in `src/layouts`, and pages are in `src/pages`. Reusable components can be created in `src/components`.
+This project uses Handlebars for templating. Layouts are in `src/layouts`, and pages are in `src/pages`. Reusable components can be created in `src/components`.
 
 Example of using a component:
 
@@ -95,20 +96,29 @@ This project offers a flexible data binding system:
 
 3. **Component-Specific Data**: Similarly, individual components can have their own JSON files following the same pattern.
 
-This allows for a clean separation of data and presentation logic across your project. You can access the data in your templates using standard Handlebars syntax:
+This allows for a clean separation of data and presentation logic across your project.
 
-```handlebars
-<h1>{{ main_heading }}</h1>
-<nav>
-  {{#each navigation as |item|}}
-    <a href="/{{item}}">{{item}}</a>
-  {{/each}}
-</nav>
+### TailwindCSS v4 Integration
+
+LiteStack uses TailwindCSS v4 with its simplified configuration approach directly in CSS:
+
+```css
+@import "tailwindcss";
+```
+
+### Dark Mode
+
+Dark mode is implemented using CSS and Alpine.js, with automatic detection of system preferences and persistent preferences via localStorage:
+
+```html
+<button x-data="{}" @click="$dispatch('toggle-theme')">
+  Toggle Dark Mode
+</button>
 ```
 
 ### Interactive Functionality
 
-For dynamic features, this starter includes Alpine.js, a minimal framework for adding JavaScript behavior to your markup:
+For dynamic features, this starter includes Alpine.js, a minimal framework for adding JavaScript behavior:
 
 ```html
 <div x-data="{ open: false }">
@@ -117,22 +127,15 @@ For dynamic features, this starter includes Alpine.js, a minimal framework for a
 </div>
 ```
 
-## Customization
+## Deployment
 
-### Adding New Pages
+### GitHub Pages
 
-Create a new `.hbs` file in the `src/pages` directory. Use the default layout or create a custom one:
+The project includes a GitHub Actions workflow that automatically builds and deploys your site to GitHub Pages when you push to the main branch.
 
-```handlebars
-{{#> "layouts/default.hbs" title="New Page"}}
-  <h1>My New Page</h1>
-  <p>This is a new page.</p>
-{{/layouts/default.hbs}}
-```
+### Other Hosting Options
 
-### Styling
-
-This starter uses TailwindCSS for styling. The main CSS file is at `src/assets/css/style.css`, which imports TailwindCSS.
+The build output in the `dist` directory can be deployed to any static hosting service or integrated with backend systems.
 
 ## Integration with Backend Systems
 
