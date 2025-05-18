@@ -1,0 +1,15 @@
+{{#> "layouts/default.hbs" title="Home"}}
+<section class="flex flex-col items-center justify-center">
+    <h1 class="text-2xl font-bold">{{ main_heading }}</h1>
+    <h2 class="text-lg font-bold">{{ sub_heading }}</h2>
+
+    <div class="mt-6" x-data="{ firstName: 'John' }">
+        <label for="first-name" class="block text-sm/6 font-medium text-gray-900">First name</label>
+        <div class="mt-2">
+            <input type="text" name="first-name" id="first-name" autocomplete="given-name" x-model="firstName"
+                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+        </div>
+        <p>Entered name: <span x-text="firstName"></span></p>
+    </div>
+</section>
+{{/layouts/default.hbs}}
