@@ -1,3 +1,6 @@
-<button class="bg-blue-500 text-white p-2 rounded-md cursor-pointer" id="{{id}}">
+<button {{#if id}} id="{{id}}" {{/if}} class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md shadow transition-colors
+    {{#if secondary}}!bg-gray-100 !text-gray-800 hover:!bg-gray-200 border border-gray-300{{/if}}
+    {{#if class}}{{class}}{{/if}}" {{#if onclick}}x-on:click="{{onclick}}" {{/if}} {{#if disabled}}disabled{{/if}}
+    {{#if type}}type="{{type}}" {{else}}type="button" {{/if}}>
     {{> @partial-block }}
 </button>

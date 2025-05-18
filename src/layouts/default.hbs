@@ -4,23 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/statics/img/vite.svg" type="image/x-icon">
+    <meta name="description" content="{{meta_description}}">
+    <title>{{#if title}}{{title}} | {{/if}}{{site_name}}</title>
+    <link rel="icon" type="image/svg+xml" href="/statics/favicon.svg">
     <link rel="stylesheet" href="/src/assets/css/style.css">
-    <script type="module" src="/src/assets/ts/main.ts"></script>
-    <title>{{ title }}</title>
 </head>
 
-<body>
-    <nav class="flex justify-center items-center w-full h-16 bg-slate-200 text-slate-900">
-        <ul class="flex gap-4">
-            {{#each navigation as |item| }}
-            <li><a href="{{../base_url}}{{item.url}}">{{item.name}}</a></li>
-            {{/each}}
-        </ul>
-    </nav>
-    <main class="main min-h-screen p-4">
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+    {{> components/header.hbs }}
+
+    <main class="flex-grow container mx-auto px-4 py-8 md:py-12">
         {{> @partial-block }}
     </main>
+
+    {{> components/footer.hbs }}
+
+    <script type="module" src="/src/assets/ts/main.ts"></script>
 </body>
 
 </html>

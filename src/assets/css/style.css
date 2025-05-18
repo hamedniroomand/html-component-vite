@@ -1,1 +1,80 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-bold;
+    }
+
+    h1 {
+        @apply text-4xl md:text-5xl;
+    }
+
+    h2 {
+        @apply text-3xl md:text-4xl;
+    }
+
+    h3 {
+        @apply text-2xl md:text-3xl;
+    }
+
+    p {
+        @apply my-4;
+    }
+
+    a {
+        @apply text-blue-600 dark:text-blue-500;
+    }
+
+    code {
+        @apply bg-gray-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm font-mono;
+    }
+}
+
+/* 
+    Custom component styles
+  */
+@layer components {
+    .btn {
+        @apply px-4 py-2 rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors font-medium;
+    }
+
+    .btn-secondary {
+        @apply px-4 py-2 rounded-md text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors font-medium border border-gray-300 dark:border-slate-600;
+    }
+
+    .card {
+        @apply bg-white dark:bg-slate-800 rounded-lg shadow-md p-6;
+    }
+
+    .form-input {
+        @apply w-full px-3 py-2 border border-gray-300 dark:border-slate-700 rounded-md dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600 focus:border-transparent;
+    }
+}
+
+/* 
+    Custom utilities
+  */
+@layer utilities {
+    .text-shadow {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-shadow-lg {
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    }
+}
