@@ -3,6 +3,7 @@ import handlebars from '@vituum/vite-plugin-handlebars';
 import tailwindcss from '@tailwindcss/vite';
 
 export default {
+    base: '/lite-stack',
     plugins: [
         tailwindcss(),
         vituum(),
